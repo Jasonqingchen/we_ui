@@ -8,6 +8,8 @@
 
     <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="../css/element-ui.min.css">
 
     <link rel="stylesheet" href="../lib/weui.min.css">
     <link rel="stylesheet" href="../css/jquery-weui.css">
@@ -105,357 +107,69 @@
         <a href="javascript:;" class="weui-btn weui-btn_default open-popup" data-target="#half">筛选</a>
     </div></div>
 </div>
+
 <!--内容-->
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" id='show-actions'>...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
+<div id="app">
+    <el-collapse accordion>
+        
+        <el-collapse-item>
+            
+             <template slot="title" class="weui-form-preview__label">
+                
+                  <div class="weui-flex">
+                    <div><div class="placeholder"></div>&nbsp;&nbsp;&nbsp;</div>
+                    <div class="weui-flex__item"><div class="placeholder">宁波市盛达工程管理咨询有限公司镇海分公司 资阳用户<i class="header-icon el-icon-info"></i></div></div>
+                  </div>
+                  
+          </template>
+          <div>
             <label class="weui-form-preview__label">生物医药产业</label>
             <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
         </div>
-        <div class="weui-form-preview__item">
+        <div>
             <label class="weui-form-preview__label">浙江省>宁波市</label>
             <span class="weui-form-preview__value">1000万以下</span>
         </div>
-        <div class="weui-form-preview__item">
+        <div>
             <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
             <span class="weui-form-preview__value">建档日期:2023-03-20</span>
         </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
+        </el-collapse-item>
+      </el-collapse>
+<div v-for="(item,index) in testlist">
+    <template>
+        <div>
+          <el-divider content-position="left">table name {{index}}</el-divider>
         </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
+      </template>
+    <div class="weui-form-preview">
+        <div class="weui-form-preview__hd">
+            <div class="weui-form-preview__item">
+                <!-- <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label> -->
+                <label class="weui-form-preview__label">{{ item.name }}</label>
+                <a class="weui-form-preview__value" id='show-actions'>...</a>
+            </div>
         </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
+        <div class="weui-form-preview__bd">
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">生物医药产业</label>
+                <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
+            </div>
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">浙江省>宁波市</label>
+                <span class="weui-form-preview__value">1000万以下</span>
+            </div>
+            <div class="weui-form-preview__item">
+                <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
+                <span class="weui-form-preview__value">建档日期:2023-03-20</span>
+            </div>
         </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
-<div class="weui-form-preview">
-    <div class="weui-form-preview__hd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">宁波市盛达工程管理咨询有限公司镇海分公司</label>
-            <a class="weui-form-preview__value" >...</a>
-        </div>
-    </div>
-    <div class="weui-form-preview__bd">
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">生物医药产业</label>
-            <!--<span class="weui-form-preview__value">电动打蛋机</span>-->
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">浙江省>宁波市</label>
-            <span class="weui-form-preview__value">1000万以下</span>
-        </div>
-        <div class="weui-form-preview__item">
-            <label class="weui-form-preview__label">维护人:资阳-用户-150</label>
-            <span class="weui-form-preview__value">建档日期:2023-03-20</span>
-        </div>
-    </div>
-    <!--<div class="weui-form-preview__ft">
-        <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
-    </div>-->
-</div><br>
+        <!--<div class="weui-form-preview__ft">
+            <a class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">操作</a>
+        </div>-->
+    </div><br>
+</div></div>
+
 <div id="list"></div>
 <div id="half" class='weui-popup__container popup-bottom'>
     <div class="weui-popup__overlay"></div>
@@ -515,6 +229,11 @@
 </style>
 
 
+  <!-- import Vue before Element -->
+  <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+  <!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script src="../js/test.js"></script>
 <script src="../lib/jquery-2.1.4.js"></script>
 <script src="../lib/fastclick.js"></script>
 <script>
