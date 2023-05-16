@@ -335,25 +335,32 @@
                 console.log("open");
             },
         });
-        $('#searchInput').bind('input propertychange', function() {
+        //非实时
+        $("form").submit(function(){
+        var keyword = $("#searchInput").val();
+
+        alert(keyword);
+        })
+        //实时搜索
+        // $('#searchInput').bind('input propertychange', function() {
                 
-                var text = $("#searchInput").val();
-                var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
-                // if (reg.test(text)) {
-                //     $('.weui-cell').each(function () {
-                //         var $self = $(this);
-                //         var flag = $self.text().search(text)
-                //         if (flag > -1) {
-                //             $self.css("display", "");
+        //         var text = $("#searchInput").val();
+        //         var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+        //         if (reg.test(text)) {
+        //             $('.weui-cell').each(function () {
+        //                 var $self = $(this);
+        //                 var flag = $self.text().search(text)
+        //                 if (flag > -1) {
+        //                     $self.css("display", "");
 
-                //         } else {
-                //             $self.css("display", "none");
+        //                 } else {
+        //                     $self.css("display", "none");
 
-                //         }
-                //     });
-                // }
-                alert("进行搜索中");
-            });
+        //                 }
+        //             });
+        //         }
+        //         alert(text);
+        //     });
 
         function cancel(){
         
