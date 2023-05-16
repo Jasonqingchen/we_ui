@@ -28,32 +28,6 @@
     <div class="up">释放刷新</div>
     <div class="refresh">正在刷新</div>
 </div>
-<!--<div style="text-align: center">
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" id="name" type="name"  placeholder="请输入用户名">
-        </div>
-    </div>
-    <div class="weui-cell">
-        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" id="password" type="password"  placeholder="请输入密码">
-        </div>
-    </div>
-    <div class="weui-cell weui-cell_vcode">
-        <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
-        <div class="weui-cell__bd">
-            <input class="weui-input" type="number" placeholder="请输入验证码">
-        </div>
-        <div class="weui-cell__ft">
-            <img class="weui-vcode-img" src="./images/vcode.jpg">
-        </div>
-    </div>
-    <div class="weui-btn-area">
-        <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">登录</a>
-    </div>
-</div>-->
 <!--搜索-->
 <div class="weui-search-bar" id="searchBar">
     <form class="weui-search-bar__form" action="#">
@@ -361,6 +335,38 @@
                 console.log("open");
             },
         });
+        $('#searchInput').bind('input propertychange', function() {
+                
+                var text = $("#searchInput").val();
+                var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
+                // if (reg.test(text)) {
+                //     $('.weui-cell').each(function () {
+                //         var $self = $(this);
+                //         var flag = $self.text().search(text)
+                //         if (flag > -1) {
+                //             $self.css("display", "");
+
+                //         } else {
+                //             $self.css("display", "none");
+
+                //         }
+                //     });
+                // }
+                alert("进行搜索中");
+            });
+
+        function cancel(){
+        
+        $('.weui-cell').css("display","")
+
+        }
+
+        function clear(){
+        
+            $('#searchInput').val('')
+            $('.weui-cell').css("display", "")
+        }
+
     </script>
 
 </body>
